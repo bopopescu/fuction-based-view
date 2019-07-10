@@ -7,14 +7,14 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length=50, null=True )
-    cover = models.ImageField(upload_to='images/' )
-    email = models.EmailField(  max_length=70, null=True)
+    #cover = models.ImageField(upload_to='images/' )
+    #email = models.EmailField(  max_length=70, null=True)
     #phno = models.PhoneField(blank=True, help_text='Contact phone number')
-    phno = models.CharField(max_length=10, null=True)
-    adrss1 = models.TextField(null=True)
-    adrss2 = models.TextField(null=True)
+    #phno = models.CharField(max_length=10, null=True)
+    #adrss1 = models.TextField(null=True)
+    #adrss2 = models.TextField(null=True)
     #adrss2 = AddressField(null=True)
-    dob = models.DateTimeField(null=True)
+    #dob = models.DateTimeField(null=True)
 
 
 

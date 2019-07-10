@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .forms import PostForm
 from .models import Post
@@ -39,6 +40,7 @@ def create(request):
         if form.is_valid():
             form.save()
             # <process form cleaned data>
-            return redirect('home.html')
+            #return HttpResponseRedirect(reverse('home.html'))
+            return redirect(reverse(home))
     else:
-        return render(request, 'post.html', { 'form' : form})
+        return render(request, 'post.html', {'form': form})
