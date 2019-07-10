@@ -1,0 +1,30 @@
+<h1>Create Post Page</h1>
+<form method="post">
+  {% csrf_token %}
+
+<!--  <input id="id_title" name="title" type="text" class="form-control form-control" placeholder="title" >-->
+<!--  <input id="id_cover" name="cover" type="file" class="form-control form-control" placeholder="pick image" >-->
+<!--  <input id="id_email" name="email" type="email" class="form-control form-control" placeholder="email" >-->
+<!--  <input id="id_phno" name="phno" type="text" class="form-control form-control" placeholder="phone number" >-->
+<!--  <input id="id_adrss1" name="adrss1" type="text" class="form-control form-control" placeholder="addrss one" >-->
+<!--  <input id="id_adrss2" name="adrss2" type="text" class="form-control form-control" placeholder="addrss 2" >-->
+<!--  <input id="id_dob" name="dob" type="date" class="form-control form-control" placeholder="dob" >-->
+
+{{ form.as_p }}
+  <button type="submit">Submit New Post</button>
+</form>
+
+
+<!--<h1>Django Image Uploading</h1>-->
+<!--<ul>-->
+<!--  {% for post in form %}-->
+<!--  <h2>{{ post.title }}</h2>-->
+<!--  <h5>{{ post.email }}</h5>-->
+<!--  <h5>{{ post.phno }}</h5>-->
+<!--  <h5>{{ post.adrss1 }}</h5>-->
+<!--  <h5>{{ post.adrss2 }}</h5>-->
+<!--  <h5>{{ post.dob }}</h5>-->
+
+<!--    <img src="{{ post.cover.url}}" alt="{{ post.title }}">-->
+<!--  {% endfor %}-->
+<!--</ul>-->
