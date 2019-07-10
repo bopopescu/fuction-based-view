@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 from .forms import PostForm
 from .models import Post
@@ -21,11 +22,23 @@ def home(request):
 #     template_name = 'post.html'
 #     success_url = reverse_lazy('home')
 
+# def create(request):
+#     form = PostForm(request.POST)
+#     if form.is_valid():
+#         form.save()
+#         return HttpResponse('home.html', {'form': form})
+#     else:
+#         return render(request, 'post.html', {'form': form})
+#
+
 def create(request):
     form = PostForm(request.POST)
-    if form.is_valid():
-        form.save()
-        return HttpResponse('home.html', {'form': form})
+    if request.method == "POST":
+        #form = MyForm(request.POST)
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # <process form cleaned data>
+            return redirect('home.html')
     else:
-        return render(request, 'post.html', {'form': form})
-
+        return render(request, 'post.html', { 'form' : form})
